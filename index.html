@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ToDo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <div><h2>To-Do-List <img src="icon.png" alt="icon" id="icon"</h2></div>
+            <form action="" autocomplete="off">
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your Task">
+                    <button id="b1">Add</button>
+                </div>
+    
+            </form>
+          
+            <ul id="list-container">
+                <!-- <li class="checked">Task 1</li> -->
+                <!-- <li class="">task 2</li>
+                <li>Task 3</li> -->
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <script>
+        
+        let list=document.querySelector('#list-container')
+        let b1=document.querySelector('#b1')
+        let form=document.querySelector('form')
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+
+            let task=document.querySelector('#input-box');
+            if(task.value===''){
+                alert("You Must be write Some thing")
+            }
+            else{
+                let li=document.createElement('li')
+                li.innerHTML=task.value
+                list.appendChild(li);
+                let span=document.createElement("span")
+                span.innerHTML="\u00d7"
+                li.appendChild(span)
+                
+            }
+            task.value=" "
+            saveData()
+
+           
+
+          
+            
+            
+        })
+
+        list.addEventListener('click',(e)=>{
+            // console.log("hii");
+            if(e.target.tagName==='LI'){
+                e.target.classList.toggle("checked")
+                saveData()
+
+
+            }
+            else if(e.target.tagName==='SPAN'){
+                e.target.parentElement.remove();
+                saveData()
+            }
+        })
+
+        function saveData(){
+            localStorage.setItem("data",list.innerHTML);
+        }
+        function showList(){
+            list.innerHTML=localStorage.getItem("data")
+        }
+        showList()
+
+    </script>
+</body>
+</html>
