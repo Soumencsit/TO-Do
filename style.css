@@ -23,7 +23,7 @@ body {
 }
 
 .todo-app{
-    /* background-color: #fff; */
+    
     border-radius: 20px;
     min-height: 40vh;
     
@@ -44,6 +44,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 2vmax;
 }
 
 #icon{
@@ -52,11 +53,12 @@ body {
     width: 30px;
 }
 .row{
-    
+    height: fit-content;
+    width: fit-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(19.4px);
     -webkit-backdrop-filter: blur(19.4px);
@@ -68,12 +70,12 @@ body {
 }
 .row input{
    
-    padding: 10px;
+    padding: 5px;
     
     flex:1;
    
     background-color: transparent;
-   
+   font-size: 1.5vmax;
     border: none;
     outline: none;
     
@@ -84,9 +86,9 @@ body {
    
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px 25px;
     border-radius: 20px;
-    font-size: 2vw;
+    font-size: 1.5vmax;
     cursor: pointer;
    color: white;
     background-color: orangered;
