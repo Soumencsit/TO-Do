@@ -1,5 +1,6 @@
 # Todo Web App
-![image](https://github.com/user-attachments/assets/52f464eb-2c15-4272-be7b-5421a3fdd59a)
+![image](https://github.com/user-attachments/assets/135e07dc-76eb-4cfe-ba76-b950c8d9cf54)
+
 
 A simple Todo web application that allows users to manage their tasks. Users can add, update, and delete tasks, with all data stored locally in the browser.
 
